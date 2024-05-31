@@ -1,0 +1,11 @@
+# Mac
+.DS_STORE
+
+# Database files
+database
+
+# Log files
+logs
+
+# Env
+.env
