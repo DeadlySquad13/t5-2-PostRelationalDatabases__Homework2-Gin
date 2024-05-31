@@ -1,0 +1,107 @@
+[
+  {
+    "Plan": {
+      "Node Type": "Bitmap Heap Scan",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Relation Name": "users_gin_1k",
+      "Alias": "users_gin_1k",
+      "Startup Cost": 49,
+      "Total Cost": 103.2,
+      "Plan Rows": 96,
+      "Plan Width": 39,
+      "Actual Startup Time": 0.126,
+      "Actual Total Time": 0.822,
+      "Actual Rows": 100,
+      "Actual Loops": 1,
+      "Recheck Cond": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))",
+      "Rows Removed by Index Recheck": 0,
+      "Exact Heap Blocks": 12,
+      "Lossy Heap Blocks": 0,
+      "Plans": [
+        {
+          "Node Type": "Bitmap Index Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Index Name": "users_gin_1k_event_message_tsv_idx",
+          "Startup Cost": 0,
+          "Total Cost": 48.98,
+          "Plan Rows": 96,
+          "Plan Width": 0,
+          "Actual Startup Time": 0.087,
+          "Actual Total Time": 0.091,
+          "Actual Rows": 100,
+          "Actual Loops": 1,
+          "Index Cond": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))"
+        }
+      ]
+    },
+    "Planning Time": 0.66,
+    "Triggers": [],
+    "Execution Time": 1.543
+  },
+  {
+    "Plan": {
+      "Node Type": "Gather",
+      "Parallel Aware": false,
+      "Async Capable": false,
+      "Startup Cost": 1694.92,
+      "Total Cost": 50209.86,
+      "Plan Rows": 95589,
+      "Plan Width": 41,
+      "Actual Startup Time": 22.03,
+      "Actual Total Time": 470.338,
+      "Actual Rows": 100000,
+      "Actual Loops": 1,
+      "Workers Planned": 2,
+      "Workers Launched": 2,
+      "Single Copy": false,
+      "Plans": [
+        {
+          "Node Type": "Bitmap Heap Scan",
+          "Parent Relationship": "Outer",
+          "Parallel Aware": true,
+          "Async Capable": false,
+          "Relation Name": "users_gin_1m",
+          "Alias": "users_gin_1m",
+          "Startup Cost": 694.92,
+          "Total Cost": 39650.96,
+          "Plan Rows": 39829,
+          "Plan Width": 41,
+          "Actual Startup Time": 19.884,
+          "Actual Total Time": 174.67,
+          "Actual Rows": 33333,
+          "Actual Loops": 3,
+          "Recheck Cond": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))",
+          "Rows Removed by Index Recheck": 0,
+          "Exact Heap Blocks": 3,
+          "Lossy Heap Blocks": 0,
+          "Workers": [],
+          "Plans": [
+            {
+              "Node Type": "Bitmap Index Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Index Name": "users_gin_1m_event_message_tsv_idx",
+              "Startup Cost": 0,
+              "Total Cost": 671.02,
+              "Plan Rows": 95589,
+              "Plan Width": 0,
+              "Actual Startup Time": 21.504,
+              "Actual Total Time": 21.508,
+              "Actual Rows": 100000,
+              "Actual Loops": 1,
+              "Index Cond": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))",
+              "Workers": []
+            }
+          ]
+        }
+      ]
+    },
+    "Planning Time": 0.338,
+    "Triggers": [],
+    "Execution Time": 916.107
+  }
+]

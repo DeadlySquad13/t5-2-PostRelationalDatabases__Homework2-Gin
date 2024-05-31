@@ -12,17 +12,17 @@
        "Total Cost": 291.50,                                                                                                                 +
        "Plan Rows": 96,                                                                                                                      +
        "Plan Width": 39,                                                                                                                     +
-       "Actual Startup Time": 0.043,                                                                                                         +
-       "Actual Total Time": 8.845,                                                                                                           +
+       "Actual Startup Time": 0.187,                                                                                                         +
+       "Actual Total Time": 10.185,                                                                                                          +
        "Actual Rows": 100,                                                                                                                   +
        "Actual Loops": 1,                                                                                                                    +
        "Filter": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))",+
        "Rows Removed by Filter": 900                                                                                                         +
      },                                                                                                                                      +
-     "Planning Time": 0.527,                                                                                                                 +
+     "Planning Time": 1.051,                                                                                                                 +
      "Triggers": [                                                                                                                           +
      ],                                                                                                                                      +
-     "Execution Time": 9.365                                                                                                                 +
+     "Execution Time": 10.639                                                                                                                +
    }                                                                                                                                         +
  ]
 (1 row)
@@ -36,11 +36,11 @@
        "Parallel Aware": false,                                                                                                                  +
        "Async Capable": false,                                                                                                                   +
        "Startup Cost": 1000.00,                                                                                                                  +
-       "Total Cost": 148514.00,                                                                                                                  +
-       "Plan Rows": 96380,                                                                                                                       +
+       "Total Cost": 148657.00,                                                                                                                  +
+       "Plan Rows": 97810,                                                                                                                       +
        "Plan Width": 41,                                                                                                                         +
-       "Actual Startup Time": 18.998,                                                                                                            +
-       "Actual Total Time": 3001.668,                                                                                                            +
+       "Actual Startup Time": 22.920,                                                                                                            +
+       "Actual Total Time": 3364.659,                                                                                                            +
        "Actual Rows": 100000,                                                                                                                    +
        "Actual Loops": 1,                                                                                                                        +
        "Workers Planned": 2,                                                                                                                     +
@@ -56,10 +56,10 @@
            "Alias": "users_1m",                                                                                                                  +
            "Startup Cost": 0.00,                                                                                                                 +
            "Total Cost": 137876.00,                                                                                                              +
-           "Plan Rows": 40158,                                                                                                                   +
+           "Plan Rows": 40754,                                                                                                                   +
            "Plan Width": 41,                                                                                                                     +
-           "Actual Startup Time": 8.817,                                                                                                         +
-           "Actual Total Time": 2958.209,                                                                                                        +
+           "Actual Startup Time": 10.088,                                                                                                        +
+           "Actual Total Time": 3323.755,                                                                                                        +
            "Actual Rows": 33333,                                                                                                                 +
            "Actual Loops": 3,                                                                                                                    +
            "Filter": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))",+
@@ -69,7 +69,7 @@
          }                                                                                                                                       +
        ]                                                                                                                                         +
      },                                                                                                                                          +
-     "Planning Time": 0.334,                                                                                                                     +
+     "Planning Time": 0.396,                                                                                                                     +
      "Triggers": [                                                                                                                               +
      ],                                                                                                                                          +
      "JIT": {                                                                                                                                    +
@@ -81,14 +81,14 @@
          "Deforming": true                                                                                                                       +
        },                                                                                                                                        +
        "Timing": {                                                                                                                               +
-         "Generation": 0.862,                                                                                                                    +
+         "Generation": 0.890,                                                                                                                    +
          "Inlining": 0.000,                                                                                                                      +
-         "Optimization": 0.613,                                                                                                                  +
-         "Emission": 9.980,                                                                                                                      +
-         "Total": 11.456                                                                                                                         +
+         "Optimization": 0.559,                                                                                                                  +
+         "Emission": 10.048,                                                                                                                     +
+         "Total": 11.498                                                                                                                         +
        }                                                                                                                                         +
      },                                                                                                                                          +
-     "Execution Time": 3476.728                                                                                                                  +
+     "Execution Time": 3924.893                                                                                                                  +
    }                                                                                                                                             +
  ]
 (1 row)
