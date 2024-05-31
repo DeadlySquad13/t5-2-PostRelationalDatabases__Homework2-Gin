@@ -70,10 +70,12 @@ def number_of_rows_charts():
     ax.legend()
     ax.set_xlabel('Количество записей в таблице')
     ax.set_ylabel('Время, мс')
+    ax.set_yscale('log')
     plt.show()  # Show the figure.
 
 
 def main():
+    # selection_charts()
     number_of_rows_charts()
 
 
