@@ -3,8 +3,14 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
-execute-init: ./scripts/gin/init.sql
-	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/init.sql
+execute-init-1: ./scripts/gin/init-1.sql
+	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/init-1.sql
+
+execute-init-2: ./scripts/gin/init-2.sql
+	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/init-2.sql
+
+execute-init-3: ./scripts/gin/init-3.sql
+	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/init-3.sql
 
 execute-experiments: ./scripts/gin/experiments.sql
 	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/experiments.sql

@@ -1,6 +1,4 @@
-DROP SCHEMA IF EXISTS gin CASCADE;
-CREATE SCHEMA gin;
-
+-- Подходит для 3 эксперимента.
 -- 1k rows.
 DROP TABLE IF EXISTS gin.users_1k CASCADE;
 CREATE TABLE gin.users_1k (
@@ -105,5 +103,5 @@ FROM
 
 UPDATE gin.users_gin_1m set event_message_tsv = to_tsvector(event_message);
 
-create index on gin.users_gin_1m using gin(event_message_tsv);
+create index on gin.users_gin_1k using gin(event_message_tsv);
 SELECT COUNT(*) from gin.users_gin_1m;
