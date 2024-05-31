@@ -3,8 +3,11 @@ ifneq (,$(wildcard ./.env))
     export
 endif
 
-execute: ./scripts/gin/init.sql
+execute-init: ./scripts/gin/init.sql
 	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/init.sql
+
+execute-experiments: ./scripts/gin/experiments.sql
+	docker exec "${CONTAINER_NAME}" psql --dbname="${DB_NAME}" --username "${DB_USR}" --password "${DB_PWD}" --file /scripts/gin/experiments.sql
 
 run:
 	docker compose up --detach

@@ -14,7 +14,7 @@ services:
     volumes:
       - ${DB_PATH}:/var/lib/postgres/data
       - ${LOGS_PATH}:/logs
-      - ${XMLDOCS_PATH}:/xmldocs
+      - ${EXPERIMENT_DATA_PATH}:/experiment_data
       - ./scripts/:/scripts/
 
 networks:

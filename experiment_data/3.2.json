@@ -1,0 +1,116 @@
+                             QUERY PLAN                              
+---------------------------------------------------------------------
+ [                                                                  +
+   {                                                                +
+     "Plan": {                                                      +
+       "Node Type": "Seq Scan",                                     +
+       "Parallel Aware": false,                                     +
+       "Async Capable": false,                                      +
+       "Relation Name": "users_1k",                                 +
+       "Alias": "users_1k",                                         +
+       "Startup Cost": 0.00,                                        +
+       "Total Cost": 291.50,                                        +
+       "Plan Rows": 10,                                             +
+       "Plan Width": 39,                                            +
+       "Actual Startup Time": 0.070,                                +
+       "Actual Total Time": 1.559,                                  +
+       "Actual Rows": 10,                                           +
+       "Actual Loops": 1,                                           +
+       "Filter": "(event_message_tsv @@ to_tsquery('User1'::text))",+
+       "Rows Removed by Filter": 990                                +
+     },                                                             +
+     "Planning Time": 0.702,                                        +
+     "Triggers": [                                                  +
+     ],                                                             +
+     "Execution Time": 1.651                                        +
+   }                                                                +
+ ]
+(1 row)
+
+                                     QUERY PLAN                                      
+-------------------------------------------------------------------------------------
+ [                                                                                  +
+   {                                                                                +
+     "Plan": {                                                                      +
+       "Node Type": "Seq Scan",                                                     +
+       "Parallel Aware": false,                                                     +
+       "Async Capable": false,                                                      +
+       "Relation Name": "users_1k",                                                 +
+       "Alias": "users_1k",                                                         +
+       "Startup Cost": 0.00,                                                        +
+       "Total Cost": 291.50,                                                        +
+       "Plan Rows": 30,                                                             +
+       "Plan Width": 39,                                                            +
+       "Actual Startup Time": 0.024,                                                +
+       "Actual Total Time": 4.611,                                                  +
+       "Actual Rows": 30,                                                           +
+       "Actual Loops": 1,                                                           +
+       "Filter": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3'::text))",+
+       "Rows Removed by Filter": 970                                                +
+     },                                                                             +
+     "Planning Time": 0.051,                                                        +
+     "Triggers": [                                                                  +
+     ],                                                                             +
+     "Execution Time": 4.836                                                        +
+   }                                                                                +
+ ]
+(1 row)
+
+                                                                  QUERY PLAN                                                                  
+----------------------------------------------------------------------------------------------------------------------------------------------
+ [                                                                                                                                           +
+   {                                                                                                                                         +
+     "Plan": {                                                                                                                               +
+       "Node Type": "Seq Scan",                                                                                                              +
+       "Parallel Aware": false,                                                                                                              +
+       "Async Capable": false,                                                                                                               +
+       "Relation Name": "users_1k",                                                                                                          +
+       "Alias": "users_1k",                                                                                                                  +
+       "Startup Cost": 0.00,                                                                                                                 +
+       "Total Cost": 291.50,                                                                                                                 +
+       "Plan Rows": 96,                                                                                                                      +
+       "Plan Width": 39,                                                                                                                     +
+       "Actual Startup Time": 0.031,                                                                                                         +
+       "Actual Total Time": 19.203,                                                                                                          +
+       "Actual Rows": 100,                                                                                                                   +
+       "Actual Loops": 1,                                                                                                                    +
+       "Filter": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10'::text))",+
+       "Rows Removed by Filter": 900                                                                                                         +
+     },                                                                                                                                      +
+     "Planning Time": 0.060,                                                                                                                 +
+     "Triggers": [                                                                                                                           +
+     ],                                                                                                                                      +
+     "Execution Time": 20.141                                                                                                                +
+   }                                                                                                                                         +
+ ]
+(1 row)
+
+                                                                                                               QUERY PLAN                                                                                                               
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ [                                                                                                                                                                                                                                     +
+   {                                                                                                                                                                                                                                   +
+     "Plan": {                                                                                                                                                                                                                         +
+       "Node Type": "Seq Scan",                                                                                                                                                                                                        +
+       "Parallel Aware": false,                                                                                                                                                                                                        +
+       "Async Capable": false,                                                                                                                                                                                                         +
+       "Relation Name": "users_1k",                                                                                                                                                                                                    +
+       "Alias": "users_1k",                                                                                                                                                                                                            +
+       "Startup Cost": 0.00,                                                                                                                                                                                                           +
+       "Total Cost": 291.50,                                                                                                                                                                                                           +
+       "Plan Rows": 182,                                                                                                                                                                                                               +
+       "Plan Width": 39,                                                                                                                                                                                                               +
+       "Actual Startup Time": 0.190,                                                                                                                                                                                                   +
+       "Actual Total Time": 23.011,                                                                                                                                                                                                    +
+       "Actual Rows": 200,                                                                                                                                                                                                             +
+       "Actual Loops": 1,                                                                                                                                                                                                              +
+       "Filter": "(event_message_tsv @@ to_tsquery('User1 | User2 | User3 | User4 | User5 | User6 | User7 | User8 | User9 | User10 | User11 | User12 | User13 | User14 | User15 | User16 | User17 | User18 | User19 | User20'::text))",+
+       "Rows Removed by Filter": 800                                                                                                                                                                                                   +
+     },                                                                                                                                                                                                                                +
+     "Planning Time": 0.232,                                                                                                                                                                                                           +
+     "Triggers": [                                                                                                                                                                                                                     +
+     ],                                                                                                                                                                                                                                +
+     "Execution Time": 24.543                                                                                                                                                                                                          +
+   }                                                                                                                                                                                                                                   +
+ ]
+(1 row)
+
