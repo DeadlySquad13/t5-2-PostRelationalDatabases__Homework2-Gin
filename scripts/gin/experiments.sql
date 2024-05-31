@@ -1,4 +1,4 @@
--- Эксперименты.
+/* -- Эксперименты.
 
 -- 1 В tsquery используется только включение слова.
 
@@ -265,4 +265,11 @@ SELECT event_message from gin.users_1k where event_message_tsv @@ to_tsquery('Us
 explain(analyze 1, format json, timing 1)
 SELECT event_message from gin.users_1m where event_message_tsv @@ to_tsquery('User1 <-> tried');
 
-\o
+\o */
+
+explain(analyze 1, format text, timing 1)
+SELECT event_message from gin.users_1m where event_message_tsv @@ to_tsquery('User1 <-> tried');
+
+explain(analyze 1, format text, timing 1)
+SELECT event_message from gin.users_gin_1m where event_message_tsv @@ to_tsquery('User1 <-> tried');
+
